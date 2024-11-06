@@ -27,7 +27,7 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.androidx.core.splashscreen)
+            // put your Multiplatform dependencies here
         }
     }
 }
