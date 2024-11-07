@@ -22,7 +22,9 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.core.splashscreen)
         }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -65,6 +67,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.navigation.compose)
     debugImplementation(compose.uiTooling)
 }
 
