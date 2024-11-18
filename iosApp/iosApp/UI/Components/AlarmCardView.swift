@@ -26,17 +26,17 @@ struct AlarmCardView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text(title)
-                        .font(.title2)
-                        .foregroundStyle(.black)
+                        .font(.headline)
+                        .foregroundColor(.onSurface)
                     
                     HStack(alignment: .lastTextBaseline) {
                         Text(time)
-                            .font(.largeTitle)
-                            .foregroundStyle(.black)
+                            .font(.extraLarge)
+                            .foregroundColor(.onSurface)
                         
                         Text("\(period)".uppercased())
                             .font(.title)
-                            .foregroundStyle(.black)
+                            .foregroundColor(.onSurface)
                     }
                     
                     Text(remainginTimeText)
@@ -46,6 +46,7 @@ struct AlarmCardView: View {
                 
                 Toggle(isOn: $toggleIsOn, label: {})
                     .labelsHidden()
+                    .tint(.primary)
             }
             .padding(20)
             
