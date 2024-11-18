@@ -40,7 +40,7 @@ struct AlarmCardView: View {
                     }
                     
                     Text(remainginTimeText)
-                        .font(.title3)
+                        .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }.frame(maxWidth: .infinity, alignment: .topLeading)
                 

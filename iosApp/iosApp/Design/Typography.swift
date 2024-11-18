@@ -15,9 +15,10 @@ public enum Montserrat: String, CaseIterable {
 }
 
 extension Font {
-    static let extraLarge: Font = Font.montserrat(Montserrat.medium, size: 42).weight(.medium)
-    static let title: Font = Font.montserrat(Montserrat.medium, size: 24).weight(.medium)
-    static let headline: Font = Font.montserrat(Montserrat.semiBold, size: 16).weight(.semibold)
+    static let extraLarge: Font = Font.montserrat(Montserrat.medium, size: 42)
+    static let title: Font = Font.montserrat(Montserrat.medium, size: 24)
+    static let headline: Font = Font.montserrat(Montserrat.semiBold, size: 16)
+    static let subheadline: Font = Font.montserrat(Montserrat.medium, size: 14)
     
     private static func montserrat(_ font: Montserrat, size: CGFloat) -> Font {
         return .custom(font.rawValue, size: size)
