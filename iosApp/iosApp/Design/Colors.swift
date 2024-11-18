@@ -12,4 +12,5 @@ extension Color {
     static let primary: Color = Color("Primary")
     static let onSurface: Color = Color("onSurface")
     static let secondary: Color = Color("Secondary")
+    static let surface: Color = Color("Surface")
 }
