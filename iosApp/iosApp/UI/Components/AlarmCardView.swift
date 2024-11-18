@@ -29,6 +29,8 @@ struct AlarmCardView: View {
                         .font(.headline)
                         .foregroundColor(.onSurface)
                     
+                    Spacer().frame(height: 10)
+                    
                     HStack(alignment: .lastTextBaseline) {
                         Text(time)
                             .font(.extraLarge)
@@ -37,7 +39,10 @@ struct AlarmCardView: View {
                         Text("\(period)".uppercased())
                             .font(.title)
                             .foregroundColor(.onSurface)
+                            .offset(x: -4)
                     }
+                    
+                    Spacer().frame(height: 8)
                     
                     Text(remainginTimeText)
                         .font(.subheadline)
