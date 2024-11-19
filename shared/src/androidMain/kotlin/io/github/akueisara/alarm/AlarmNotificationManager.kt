@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.AlarmManagerCompat
+import co.touchlab.kermit.Logger
 import kotlinx.datetime.Instant
 
 internal actual class AlarmNotificationManager(
@@ -22,11 +23,14 @@ internal actual class AlarmNotificationManager(
                 type,
                 time.toEpochMilliseconds(),
                 alarmIntent
-            )
+            ).also {
+                Logger.d { "Scheduling alarm $id for $time" }
+            }
         }
     }
 
     actual fun cancel(id: Long) {
+        Logger.d { "Canceling alarm with id $id" }
         val alarmIntent = Intent(context, AlarmReceiver::class.java)
             .createPendingIntent(context, id.toInt())
         alarmManager?.cancel(alarmIntent)
