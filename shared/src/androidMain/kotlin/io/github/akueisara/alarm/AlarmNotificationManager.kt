@@ -12,11 +12,11 @@ internal actual class AlarmNotificationManager(
 ) {
     private val alarmManager: AlarmManager? by lazy { context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager }
 
-    actual fun schedule(alarmId: Long, alarmName: String, time: Instant) {
+    actual fun schedule(id: Long, name: String, time: Instant) {
         alarmManager?.let { alarmManager ->
             val type = AlarmManager.RTC_WAKEUP
             val alarmIntent = Intent(context, AlarmReceiver::class.java)
-                .createPendingIntent(context, alarmId.toInt())
+                .createPendingIntent(context, id.toInt())
             AlarmManagerCompat.setExactAndAllowWhileIdle(
                 alarmManager,
                 type,
@@ -26,9 +26,9 @@ internal actual class AlarmNotificationManager(
         }
     }
 
-    actual fun cancel(alarmId: Long) {
+    actual fun cancel(id: Long) {
         val alarmIntent = Intent(context, AlarmReceiver::class.java)
-            .createPendingIntent(context, alarmId.toInt())
+            .createPendingIntent(context, id.toInt())
         alarmManager?.cancel(alarmIntent)
     }
 }
