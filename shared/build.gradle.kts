@@ -30,6 +30,7 @@ kotlin {
             implementation(libs.androidx.core)
         }
         commonMain.dependencies {
+            implementation(libs.kermit)
             implementation(libs.kotlinx.datetime)
         }
     }
