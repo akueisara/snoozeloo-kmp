@@ -12,6 +12,10 @@ kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
+
+        dependencies {
+           // put your Android dependencies here
+        }
     }
     
     listOf(
@@ -27,7 +31,7 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.kotlinx.datetime)
         }
     }
 }
