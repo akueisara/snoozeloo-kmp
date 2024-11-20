@@ -26,8 +26,12 @@ kotlin {
     }
     
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.androidx.core)
+        }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.kermit)
+            implementation(libs.kotlinx.datetime)
         }
     }
 }
